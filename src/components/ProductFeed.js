@@ -16,7 +16,7 @@ function ProductFeed({ products }) {
                     rating_count={rating.count}
                 />
             ))}
-
+            {/**ADvertisment image */}
             <img className=" md:col-span-full" src="https://links.papareact.com/dyz" alt="ad" />
             <div className="md:col-span-2 ">
                 {products.slice(4, 5).map(({ id, title, price, rating, description, category, image }) => (

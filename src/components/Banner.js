@@ -13,13 +13,13 @@ function Banner() {
                 interval={5000}
             >
                 <div>
-                    <img loading="lazy" src="https://img.freepik.com/free-photo/pretty-young-stylish-sexy-woman-pink-luxury-dress-summer-fashion-trend-chic-style-sunglasses-blue-studio-background-shopping-holding-paper-bags-talking-mobile-phone-shopaholic_285396-2957.jpg?size=338&ext=jpg" alt="banner_3" />
+                    <img loading="lazy" src="https://m.media-amazon.com/images/I/61FuWeCuGCL._SX3000_.jpg" alt="banner_1" />
                 </div>
                 <div>
-                    <img loading="lazy" src="https://img.freepik.com/free-photo/phone-with-black-friday-inscription-table_23-2147957608.jpg?size=338&ext=jpg" alt="banner_1" />
+                    <img loading="lazy" src="https://m.media-amazon.com/images/I/81JxNoPb96L._SX3000_.jpg" alt="banner_2" />
                 </div>
                 <div>
-                    <img loading="lazy" src="https://img.freepik.com/free-photo/woman-shopping-bags-copy-space_23-2148674356.jpg?size=338&ext=jpg" alt="banner_3" />
+                    <img loading="lazy" src="https://m.media-amazon.com/images/I/51-lVSD742L._SX3000_.jpg" alt="banner_3" />
                 </div>
             </Carousel>
         </div >

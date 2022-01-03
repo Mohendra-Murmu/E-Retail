@@ -1,7 +1,18 @@
 import { SearchIcon, ShoppingBagIcon } from "@heroicons/react/outline"
 import Image from "next/image"
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { UserCircleIcon } from "@heroicons/react/solid";
+{/**Built-in Routing */ }
+import { useRouter } from "next/router"
+import { selectItems } from "../slices/basketSlice";
+import { useSelector } from "react-redux";
 
 function Header_main() {
+    const { data: session } = useSession();
+    {/**It's a hook . this will give router object */ }
+    const router = useRouter();
+    const items = useSelector(selectItems);
+
     return (
         <div className="flex items-center bg-eretail_dark_neon-black p-1 flex-grow py-2">
             <div className="mt-2 flex items-center flex-grow sm:flex-grow-0 ">
@@ -11,6 +22,7 @@ function Header_main() {
                     height={40}
                     objectFit="contain"
                     className="cursor-pointer"
+                    onClick={() => router.push(`/`)}
                 />
             </div>
             {/**Search bar */}
@@ -35,16 +47,32 @@ function Header_main() {
 
             {/*//*Search bar */}
             <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-                <div className="link">
-                    <p className="">Hello User</p>
+                <div onClick={!session ? signIn : signOut} className="link">
+                    <p className="flex">
+                        <UserCircleIcon className="h-4 pr-1" />
+                        {session ? `Hello, ${session.user.name}` : "Sign In"}
+                    </p>
                     <p className="font-extrabold md:text-sm">Account & Lists</p>
                 </div>
                 <div className="link">
                     <p className="">Returns</p>
                     <p className="font-extrabold md:text-sm">& Orders</p>
                 </div>
-                <div className="link flex relative items-center ">
-                    <span className="absolute top-0 right-0 md:right-6 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">0</span>
+                <div className="link flex relative items-center " onClick={() => router.push(`/checkout`)}>
+                    <span className="
+                        absolute 
+                        top-0 
+                        right-0 
+                        md:right-6 
+                        h-4 w-4 
+                        bg-yellow-400 
+                        text-center 
+                        rounded-full 
+                        text-black 
+                        font-bold
+                        ">
+                        {items.length}
+                    </span>
                     <ShoppingBagIcon className="h-10" />
                     <p className=" hidden md:inline mt-2 md:text-sm font-extrabold">Basket</p>
                 </div>
