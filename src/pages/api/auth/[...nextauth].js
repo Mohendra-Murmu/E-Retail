@@ -14,6 +14,7 @@ export default NextAuth({
         }),
         // ...add more providers here
     ],
+
     secret: process.env.SECRET,
     callbacks: {
         redirect({ url, baseUrl }) {
@@ -23,5 +24,4 @@ export default NextAuth({
             return baseUrl
         }
     }
-
 })
