@@ -14,9 +14,6 @@ export default NextAuth({
         }),
         // ...add more providers here
     ],
-<<<<<<< HEAD
+
     secret: process.env.SECRET,
-=======
-    
->>>>>>> c06bf60d81a769c6487215dd12dfe061e1589fac
 })
