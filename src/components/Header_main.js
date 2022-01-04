@@ -8,7 +8,7 @@ import { selectItems } from "../slices/basketSlice";
 import { useSelector } from "react-redux";
 
 function Header_main() {
-    const { data: session } = useSession();
+    const { data: session, status } = useSession();
     {/**It's a hook . this will give router object */ }
     const router = useRouter();
     const items = useSelector(selectItems);
@@ -47,10 +47,10 @@ function Header_main() {
 
             {/*//*Search bar */}
             <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-                <div onClick={!session ? signIn : signOut} className="link">
+                <div onClick={status === "authenticated" ? signOut : signIn} className="link">
                     <p className="flex">
                         <UserCircleIcon className="h-4 pr-1" />
-                        {session ? `Hello, ${session.user.name}` : "Sign In"}
+                        {status === "authenticated" ? `Hello, ${session.user.name}` : "Sign In"}
                     </p>
                     <p className="font-extrabold md:text-sm">Account & Lists</p>
                 </div>
