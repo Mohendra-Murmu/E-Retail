@@ -14,9 +14,14 @@ export default NextAuth({
         }),
         // ...add more providers here
     ],
-<<<<<<< HEAD
     secret: process.env.SECRET,
-=======
-    
->>>>>>> c06bf60d81a769c6487215dd12dfe061e1589fac
+    callbacks: {
+        redirect({ url, baseUrl }) {
+            if (url.startsWith(baseUrl)) return url
+            // Allows relative callback URLs
+            else if (url.startsWith("/")) return new URL(url, baseUrl).toString()
+            return baseUrl
+        }
+    }
+
 })
