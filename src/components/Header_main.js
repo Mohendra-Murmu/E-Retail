@@ -50,7 +50,7 @@ function Header_main() {
                 <div onClick={status === "authenticated" ? signOut : signIn} className="link">
                     <p className="flex">
                         <UserCircleIcon className="h-4 pr-1" />
-                        {status === "authenticated" ? `Hello, ${session.user.name}` : "Sign In"}
+                        {session ? `Hello, ${session.user.name}` : "Sign In"}
                     </p>
                     <p className="font-extrabold md:text-sm">Account & Lists</p>
                 </div>
