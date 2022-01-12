@@ -51,14 +51,13 @@ export default function CheckoutProduct({ id,
                 <div className="flex justify-content items-center h-5">
                     {price} <CurrencyRupeeIcon className="h-5" />
                 </div>
-            </div>
-            <div className="flex flex-col space-y-2 my-auto justify-self-end">
-                <button className="button" onClick={removeItemFromBasket}>Remove from Basket</button>
-                <button className="button">Buy Now</button>
-            </div>
+            </div>            
             {/**Right section Button */}
             <div className="flex ">
-
+                <div className="flex flex-col space-y-2 my-auto justify-self-end">
+                    <button className="button" onClick={removeItemFromBasket}>Remove from Basket</button>
+                    <button className="button">Buy Now</button>
+                </div>
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ export default function Home({ products }) {
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>E-retail</title>
+        <title>E-Retail</title>
       </Head>
       <Header />
       <main className="max-w-screen-2xl mx-auto">
@@ -23,6 +23,7 @@ export default function Home({ products }) {
 }
 
 export async function getServerSideProps(context) {
+  //Retrieve products from fakestoreapi 
   const products = await fetch("https://fakestoreapi.com/products").then(
     (res) => res.json()
   );

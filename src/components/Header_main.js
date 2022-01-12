@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 function Header_main() {
     const { data: session, status } = useSession();
+    console.log(status);
     {/**It's a hook . this will give router object */ }
     const router = useRouter();
     const items = useSelector(selectItems);
